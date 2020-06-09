@@ -15,6 +15,7 @@ public abstract class Piece extends ImageView {
    protected int x;
    protected int y;
 
+   public Piece(){}
   public Piece(int x, int y){
      fitHeightProperty();
      fitWidthProperty();
@@ -53,7 +54,6 @@ public abstract class Piece extends ImageView {
       setTranslateY(y);
    }
    public  void move(Tile source, Tile target){
-       System.out.println("inside Super:move");
        Piece piece = source.getPiece();
        source.setPiece(null);
        target.setPiece(piece);

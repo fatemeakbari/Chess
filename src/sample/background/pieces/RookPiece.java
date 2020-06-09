@@ -11,6 +11,11 @@ import static sample.background.config.Param.TARGET_TILE_COLOR;
 
 public class RookPiece extends Piece {
 
+    public RookPiece(int x, int y,Direction dir){
+        super(x,y);
+        direction = dir;
+    }
+
     public RookPiece(int x, int y, Direction dir, String color){
         super(x,y);
         name = "Rook_"+color;
@@ -20,10 +25,9 @@ public class RookPiece extends Piece {
         setImage(image);
     }
 
-    public boolean isCastle(Tile tile){
+    private boolean isCastle(Tile tile){
 
         if(tile.hasPiece()){
-            System.out.println("name "+tile.getPiece().getName()+ " dire "+tile.getPiece().getDirection());
             if(!tile.getPiece().getDirection().equals(direction)){
                 tile.highLight(TARGET_TILE_COLOR);
             }
@@ -34,8 +38,6 @@ public class RookPiece extends Piece {
     }
     @Override
     public void highlightPossibleTarget(Board board){
-        System.out.println(name);
-        Color hColor = Color.YELLOW;
 
         for(int row=x+1;row<8;row++){
             if(!isCastle(board.getTiles()[row][y])){
@@ -44,7 +46,6 @@ public class RookPiece extends Piece {
         }
         
         for(int row=x-1;row>=0;row--){
-            System.out.println("row "+row+" y "+y);
             if(!isCastle(board.getTiles()[row][y])){
                 break;
             }
@@ -61,8 +62,6 @@ public class RookPiece extends Piece {
                 break;
             }
         }
-
-
     }
 
 

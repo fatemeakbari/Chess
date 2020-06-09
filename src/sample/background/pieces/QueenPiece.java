@@ -2,6 +2,7 @@ package sample.background.pieces;
 
 
 import javafx.scene.image.Image;
+import sample.background.Board;
 import sample.background.config.Direction;
 import sample.background.config.PiecePath;
 
@@ -16,7 +17,11 @@ public class QueenPiece extends Piece {
         setImage(image);
     }
 
-
-
-
+    @Override
+    public void highlightPossibleTarget(Board board) {
+        RookPiece rookPiece = new RookPiece(x,y,direction);
+        rookPiece.highlightPossibleTarget(board);
+        BishopPiece bishopPiece = new BishopPiece(x,y,direction);
+        bishopPiece.highlightPossibleTarget(board);
+    }
 }

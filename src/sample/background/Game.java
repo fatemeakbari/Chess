@@ -27,7 +27,6 @@ public class Game {
         int oldY = (int) (y / TILE_SIZE);
 
         Tile tile = board.getTile(oldX,oldY);
-
         if(tile.hasPiece() && tile.getPiece().getDirection().equals(activeDir)){
             board.unHighLightAll();
             tile.highLight(SOURCE_TILE_COLOR);

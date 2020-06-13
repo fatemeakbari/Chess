@@ -54,8 +54,8 @@ public class Board extends Pane {
         tiles[0][7].setPiece(new RookPiece(0,7, DOWN, color));
         tiles[1][7].setPiece(new KnightPiece(1,7, DOWN, color));
         tiles[2][7].setPiece(new BishopPiece(2,7, DOWN, color));
-        tiles[3][7].setPiece(new KingPiece(3,7, DOWN, color));
-        tiles[4][7].setPiece(new QueenPiece(4,7, DOWN, color));
+        tiles[3][7].setPiece(new QueenPiece(3,7, DOWN, color));
+        tiles[4][7].setPiece(new KingPiece(4,7, DOWN, color));
         tiles[5][7].setPiece(new BishopPiece(5,7, DOWN, color));
         tiles[6][7].setPiece(new KnightPiece(6,7, DOWN, color));
         tiles[7][7].setPiece(new RookPiece(7,7, DOWN, color));
@@ -80,8 +80,8 @@ public class Board extends Pane {
         tiles[0][0].setPiece(new RookPiece(0, 0, TOP, color));
         tiles[1][0].setPiece(new KnightPiece(1, 0, TOP, color));
         tiles[2][0].setPiece(new BishopPiece(2, 0, TOP, color));
-        tiles[3][0].setPiece(new KingPiece( 3,0, TOP, color));
-        tiles[4][0].setPiece(new QueenPiece(4, 0, TOP, color));
+        tiles[3][0].setPiece(new QueenPiece( 3,0, TOP, color));
+        tiles[4][0].setPiece(new KingPiece(4, 0, TOP, color));
         tiles[5][0].setPiece(new BishopPiece(5, 0, TOP, color));
         tiles[6][0].setPiece(new KnightPiece(6, 0, TOP, color));
         tiles[7][0].setPiece(new RookPiece(7, 0, TOP, color));

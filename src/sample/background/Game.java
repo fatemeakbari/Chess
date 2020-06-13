@@ -27,7 +27,8 @@ public class Game {
         int oldY = (int) (y / TILE_SIZE);
 
         Tile tile = board.getTile(oldX,oldY);
-        if(tile.hasPiece() && tile.getPiece().getDirection().equals(activeDir)){
+
+        if(tile.hasPiece() && tile.getPiece().getDirection().equals(activeDir) && !tile.isHighLight()){
             board.unHighLightAll();
             tile.highLight(SOURCE_TILE_COLOR);
             tile.getPiece().highlightPossibleTarget(board);
@@ -35,10 +36,7 @@ public class Game {
         }
         else if(tile.isHighLight() && tile.isTargetColor()){
 
-            if(tile.hasPiece()){
-                board.getChildren().remove(tile.getPiece());
-            }
-            sourceTile.getPiece().move(sourceTile,tile);
+            sourceTile.getPiece().move(sourceTile,tile, board);
             board.unHighLightAll();
 
 

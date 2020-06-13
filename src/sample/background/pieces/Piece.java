@@ -14,6 +14,7 @@ public abstract class Piece extends ImageView {
    protected Direction direction;
    protected int x;
    protected int y;
+   protected boolean firstMove = true;
 
    public Piece(){}
   public Piece(int x, int y){
@@ -53,7 +54,12 @@ public abstract class Piece extends ImageView {
       setTranslateX(x);
       setTranslateY(y);
    }
-   public  void move(Tile source, Tile target){
+   public  void move(Tile source, Tile target, Board board){
+
+       if(target.hasPiece()){
+           board.getChildren().remove(target.getPiece());
+       }
+       firstMove = false;
        Piece piece = source.getPiece();
        source.setPiece(null);
        target.setPiece(piece);
@@ -77,6 +83,10 @@ public abstract class Piece extends ImageView {
             return true;
         }
         return false;
+    }
+
+    public boolean isFirstMove(){
+       return firstMove;
     }
 
 

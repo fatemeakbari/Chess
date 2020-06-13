@@ -11,7 +11,7 @@ import static sample.background.config.Param.TARGET_TILE_COLOR;
 
 public class PawnPiece extends Piece {
 
-    boolean firstMove = true;
+
     public PawnPiece(int x, int y, Direction dir, String color){
         super(x,y);
         name = "Pawn_"+color;
@@ -21,11 +21,7 @@ public class PawnPiece extends Piece {
         setImage(image);
     }
 
-    @Override
-    public void move(Tile source, Tile target) {
-        super.move(source,target);
-        firstMove=false;
-    }
+
 
     @Override
     public void highlightPossibleTarget(Board board) {
